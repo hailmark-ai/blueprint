@@ -1,0 +1,141 @@
+{
+  "id": "manifattura",
+  "nome": "Manifattura B2B",
+  "archetipo": "asset",
+  "perche": "I clienti sono altre aziende e i loro agenti: lead time, avanzamento e ricambi valgono più di una vetrina.",
+  "reparti": [
+    "Commerciale",
+    "Ufficio tecnico",
+    "Produzione",
+    "Qualità",
+    "Acquisti",
+    "Post vendita e ricambi"
+  ],
+  "cervello": [
+    {
+      "tipo": "fatti",
+      "voce": "Prodotti, codici, schede tecniche, certificazioni",
+      "esposizione": "pubblico",
+      "proprietario": "Ufficio tecnico"
+    },
+    {
+      "tipo": "fatti",
+      "voce": "Ordini, avanzamento produzione, spedizioni",
+      "esposizione": "partner",
+      "proprietario": "Produzione"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Distinte base, cicli, vincoli di produzione",
+      "esposizione": "segreto",
+      "proprietario": "Ufficio tecnico"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Listini per cliente e condizioni commerciali",
+      "esposizione": "segreto",
+      "proprietario": "Commerciale"
+    },
+    {
+      "tipo": "processi",
+      "voce": "Offerta, ordine, produzione, non conformità",
+      "esposizione": "interno",
+      "proprietario": "Produzione"
+    },
+    {
+      "tipo": "sapere",
+      "voce": "Know-how di processo, soluzione dei guasti",
+      "esposizione": "interno",
+      "proprietario": "Post vendita e ricambi"
+    },
+    {
+      "tipo": "identita",
+      "voce": "Azienda, settori serviti, certificazioni",
+      "esposizione": "pubblico",
+      "proprietario": "Commerciale"
+    }
+  ],
+  "capacita": [
+    {
+      "nome": "catalogo_tecnico",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Prodotti e schede tecniche"
+    },
+    {
+      "nome": "lead_time",
+      "tipo": "calcolo",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "partner",
+      "descrizione": "Tempo di consegna da capacità e materiali"
+    },
+    {
+      "nome": "offerta",
+      "tipo": "calcolo",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "partner",
+      "descrizione": "Prezzo da listino del cliente"
+    },
+    {
+      "nome": "ordine",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "partner",
+      "descrizione": "Ordine confermato dal cliente"
+    },
+    {
+      "nome": "avanzamento_ordine",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "partner",
+      "descrizione": "Fase di produzione e data prevista"
+    },
+    {
+      "nome": "ricambi",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "partner",
+      "descrizione": "Ricambi compatibili e disponibilità"
+    },
+    {
+      "nome": "ticket_assistenza",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "partner",
+      "descrizione": "Apertura di un intervento"
+    },
+    {
+      "nome": "supporto_tecnico",
+      "tipo": "consulenza",
+      "esegue": "ai",
+      "consenso": false,
+      "esposizione": "partner",
+      "descrizione": "Diagnosi guidata dal sapere di post vendita"
+    }
+  ],
+  "prima_ondata": [
+    "catalogo_tecnico",
+    "lead_time",
+    "avanzamento_ordine",
+    "ricambi"
+  ],
+  "mai_ai": [
+    "Controllo di macchine e linee",
+    "Rilascio qualità del lotto",
+    "Impegno di date di consegna"
+  ],
+  "norme": [
+    "Regolamento macchine (UE) 2023/1230 e marcatura CE",
+    "Cyber Resilience Act per prodotti digitali",
+    "NIS2 se applicabile",
+    "Sistema qualità ISO 9001 se certificati"
+  ]
+}

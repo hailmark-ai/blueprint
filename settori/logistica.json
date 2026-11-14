@@ -1,0 +1,133 @@
+{
+  "id": "logistica",
+  "nome": "Logistica e trasporti",
+  "archetipo": "asset",
+  "perche": "Si vende un'operazione su merci fisiche: quotazione, tracciamento e eccezioni sono tutto.",
+  "reparti": [
+    "Commerciale",
+    "Operazioni e magazzini",
+    "Trasporti",
+    "Customer service",
+    "Amministrazione"
+  ],
+  "cervello": [
+    {
+      "tipo": "fatti",
+      "voce": "Servizi, zone servite, tempi standard",
+      "esposizione": "pubblico",
+      "proprietario": "Commerciale"
+    },
+    {
+      "tipo": "fatti",
+      "voce": "Spedizioni, posizioni, prove di consegna",
+      "esposizione": "cliente",
+      "proprietario": "Operazioni e magazzini"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Tariffe, supplementi, regole di peso e volume",
+      "esposizione": "segreto",
+      "proprietario": "Commerciale"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Instradamento e capacità",
+      "esposizione": "interno",
+      "proprietario": "Trasporti"
+    },
+    {
+      "tipo": "processi",
+      "voce": "Ritiro, consegna, giacenza, reclamo",
+      "esposizione": "interno",
+      "proprietario": "Customer service"
+    },
+    {
+      "tipo": "sapere",
+      "voce": "Eccezioni e soluzioni tipiche",
+      "esposizione": "interno",
+      "proprietario": "Customer service"
+    },
+    {
+      "tipo": "identita",
+      "voce": "Rete, coperture, condizioni di trasporto",
+      "esposizione": "pubblico",
+      "proprietario": "Commerciale"
+    }
+  ],
+  "capacita": [
+    {
+      "nome": "quotazione",
+      "tipo": "calcolo",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Prezzo e tempi da tariffa"
+    },
+    {
+      "nome": "prenota_ritiro",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Ritiro con etichetta"
+    },
+    {
+      "nome": "tracking",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Posizione e stato"
+    },
+    {
+      "nome": "modifica_consegna",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Nuova data o indirizzo"
+    },
+    {
+      "nome": "prova_consegna",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Firma e foto di consegna"
+    },
+    {
+      "nome": "reclamo",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Danno o smarrimento"
+    },
+    {
+      "nome": "assistenza",
+      "tipo": "consulenza",
+      "esegue": "ai",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Gestione delle eccezioni dal cervello"
+    }
+  ],
+  "prima_ondata": [
+    "quotazione",
+    "prenota_ritiro",
+    "tracking",
+    "modifica_consegna"
+  ],
+  "mai_ai": [
+    "Pianificazione del carico e sicurezza del mezzo",
+    "Merci pericolose",
+    "Dichiarazioni doganali"
+  ],
+  "norme": [
+    "Convenzione CMR",
+    "ADR per merci pericolose",
+    "Normativa doganale UE",
+    "Regolamento eFTI",
+    "GDPR per i dati dei destinatari"
+  ]
+}

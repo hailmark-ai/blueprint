@@ -1,0 +1,149 @@
+{
+  "id": "commercio",
+  "nome": "Commercio e vendite (retail, e-commerce, distribuzione)",
+  "archetipo": "catalogo",
+  "perche": "Il cliente compra prodotti già fatti: catalogo, prezzo e disponibilità devono essere veri in ogni istante.",
+  "reparti": [
+    "Direzione",
+    "Vendite",
+    "Prodotto e acquisti",
+    "Magazzino e spedizioni",
+    "Marketing",
+    "Assistenza clienti"
+  ],
+  "cervello": [
+    {
+      "tipo": "fatti",
+      "voce": "Catalogo, schede prodotto, prezzi di listino",
+      "esposizione": "pubblico",
+      "proprietario": "Prodotto e acquisti"
+    },
+    {
+      "tipo": "fatti",
+      "voce": "Disponibilità per magazzino",
+      "esposizione": "interno",
+      "proprietario": "Magazzino e spedizioni"
+    },
+    {
+      "tipo": "fatti",
+      "voce": "Ordini e storico del cliente",
+      "esposizione": "cliente",
+      "proprietario": "Vendite"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Promozioni, sconti per cliente, margini",
+      "esposizione": "segreto",
+      "proprietario": "Vendite"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Costi e tempi di spedizione",
+      "esposizione": "interno",
+      "proprietario": "Magazzino e spedizioni"
+    },
+    {
+      "tipo": "processi",
+      "voce": "Ordine, reso, rimborso",
+      "esposizione": "interno",
+      "proprietario": "Assistenza clienti"
+    },
+    {
+      "tipo": "sapere",
+      "voce": "Consigli d'uso, compatibilità, confronti",
+      "esposizione": "interno",
+      "proprietario": "Prodotto e acquisti"
+    },
+    {
+      "tipo": "identita",
+      "voce": "Marchio, condizioni di vendita e reso, garanzie",
+      "esposizione": "pubblico",
+      "proprietario": "Marketing"
+    }
+  ],
+  "capacita": [
+    {
+      "nome": "cerca_prodotti",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Ricerca nel catalogo con filtri"
+    },
+    {
+      "nome": "disponibilita",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Disponibilità e tempi di consegna"
+    },
+    {
+      "nome": "prezzo",
+      "tipo": "calcolo",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Prezzo finale, anche personalizzato"
+    },
+    {
+      "nome": "carrello_e_totale",
+      "tipo": "calcolo",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Totale con spedizione e promozioni"
+    },
+    {
+      "nome": "ordine",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Ordine con pagamento"
+    },
+    {
+      "nome": "stato_ordine",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Stato e tracciamento"
+    },
+    {
+      "nome": "reso",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Richiesta di reso"
+    },
+    {
+      "nome": "consiglio",
+      "tipo": "consulenza",
+      "esegue": "ai",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Aiuto nella scelta dal cervello"
+    }
+  ],
+  "prima_ondata": [
+    "cerca_prodotti",
+    "disponibilita",
+    "prezzo",
+    "carrello_e_totale",
+    "ordine"
+  ],
+  "mai_ai": [
+    "Prezzo finale e sconti",
+    "Disponibilità dichiarata",
+    "Rimborsi"
+  ],
+  "norme": [
+    "Codice del consumo: recesso e informazioni precontrattuali",
+    "Direttiva Omnibus",
+    "Regolamento sulla sicurezza generale dei prodotti",
+    "GDPR",
+    "PSD2"
+  ]
+}

@@ -1,0 +1,24 @@
+name: Verifica
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verifica:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: L'azienda di esempio rispetta le regole
+        run: python strumenti/verifica.py esempio/azienda.json
+      - name: Ogni settore ha la struttura attesa
+        run: |
+          for f in settori/*.json; do
+            python -c "import json,sys; d=json.load(open(sys.argv[1], encoding='utf-8')); assert d['capacita'] and d['cervello'], sys.argv[1]" "$f"
+          done

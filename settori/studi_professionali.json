@@ -1,0 +1,141 @@
+{
+  "id": "studi_professionali",
+  "nome": "Studi professionali (legali, commercialisti, consulenti)",
+  "archetipo": "pratica",
+  "perche": "Il cliente compra una pratica seguita da un professionista: documenti, scadenze e stato vanno all'AI, il parere no.",
+  "reparti": [
+    "Segreteria",
+    "Professionisti",
+    "Pratiche e adempimenti",
+    "Amministrazione"
+  ],
+  "cervello": [
+    {
+      "tipo": "fatti",
+      "voce": "Servizi, professionisti, onorari indicativi",
+      "esposizione": "pubblico",
+      "proprietario": "Segreteria"
+    },
+    {
+      "tipo": "fatti",
+      "voce": "Pratiche, documenti e scadenze dei clienti",
+      "esposizione": "cliente",
+      "proprietario": "Pratiche e adempimenti"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Scadenzari e requisiti di legge",
+      "esposizione": "interno",
+      "proprietario": "Pratiche e adempimenti"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Tariffario e preventivazione",
+      "esposizione": "interno",
+      "proprietario": "Amministrazione"
+    },
+    {
+      "tipo": "processi",
+      "voce": "Apertura pratica, raccolta documenti, deposito",
+      "esposizione": "interno",
+      "proprietario": "Pratiche e adempimenti"
+    },
+    {
+      "tipo": "sapere",
+      "voce": "Pareri, casistiche, modelli",
+      "esposizione": "segreto",
+      "proprietario": "Professionisti"
+    },
+    {
+      "tipo": "identita",
+      "voce": "Studio, iscrizioni agli ordini, assicurazione professionale",
+      "esposizione": "pubblico",
+      "proprietario": "Segreteria"
+    }
+  ],
+  "capacita": [
+    {
+      "nome": "servizi",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Servizi e professionisti"
+    },
+    {
+      "nome": "preventivo_onorario",
+      "tipo": "calcolo",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Onorario da tariffario"
+    },
+    {
+      "nome": "prenota_consulenza",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Appuntamento con il professionista"
+    },
+    {
+      "nome": "documenti_richiesti",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Cosa serve per la pratica"
+    },
+    {
+      "nome": "carica_documenti",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Invio documenti alla pratica"
+    },
+    {
+      "nome": "stato_pratica",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Fase e prossimi passi"
+    },
+    {
+      "nome": "scadenze",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Scadenze del cliente"
+    },
+    {
+      "nome": "parere",
+      "tipo": "consulenza",
+      "esegue": "persona",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Parere del professionista"
+    }
+  ],
+  "prima_ondata": [
+    "servizi",
+    "prenota_consulenza",
+    "documenti_richiesti",
+    "stato_pratica",
+    "scadenze"
+  ],
+  "mai_ai": [
+    "Parere professionale",
+    "Invio di dichiarazioni e atti",
+    "Valutazioni deontologiche"
+  ],
+  "norme": [
+    "Ordinamenti professionali e deontologia",
+    "Segreto professionale",
+    "Normativa antiriciclaggio",
+    "Legge 132/2025: AI nelle professioni intellettuali",
+    "GDPR"
+  ]
+}

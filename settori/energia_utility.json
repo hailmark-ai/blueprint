@@ -1,0 +1,135 @@
+{
+  "id": "energia_utility",
+  "nome": "Energia e utility",
+  "archetipo": "contratto",
+  "perche": "Il cliente compra una fornitura regolata: offerte confrontabili, bollette spiegabili, rete sicura.",
+  "reparti": [
+    "Vendite",
+    "Fatturazione",
+    "Misura e rete",
+    "Assistenza clienti",
+    "Recupero crediti",
+    "Regolatorio"
+  ],
+  "cervello": [
+    {
+      "tipo": "fatti",
+      "voce": "Offerte e condizioni",
+      "esposizione": "pubblico",
+      "proprietario": "Vendite"
+    },
+    {
+      "tipo": "fatti",
+      "voce": "Contratti, letture, bollette, consumi",
+      "esposizione": "cliente",
+      "proprietario": "Fatturazione"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Prezzi indicizzati, componenti tariffarie, calcolo bolletta",
+      "esposizione": "interno",
+      "proprietario": "Fatturazione"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Merito creditizio e cauzioni",
+      "esposizione": "segreto",
+      "proprietario": "Recupero crediti"
+    },
+    {
+      "tipo": "processi",
+      "voce": "Attivazione, voltura, cambio fornitore, guasto",
+      "esposizione": "interno",
+      "proprietario": "Assistenza clienti"
+    },
+    {
+      "tipo": "sapere",
+      "voce": "Spiegazione della bolletta, risparmio",
+      "esposizione": "interno",
+      "proprietario": "Assistenza clienti"
+    },
+    {
+      "tipo": "identita",
+      "voce": "Società, schede di confrontabilità, reclami, conciliazione",
+      "esposizione": "pubblico",
+      "proprietario": "Regolatorio"
+    }
+  ],
+  "capacita": [
+    {
+      "nome": "offerte",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Offerte attive e condizioni"
+    },
+    {
+      "nome": "stima_spesa",
+      "tipo": "calcolo",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Spesa annua stimata dai consumi"
+    },
+    {
+      "nome": "attiva_fornitura",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Contratto con firma"
+    },
+    {
+      "nome": "autolettura",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Invio della lettura"
+    },
+    {
+      "nome": "bolletta_e_consumi",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Bollette, consumi, pagamenti"
+    },
+    {
+      "nome": "segnala_guasto",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Segnalazione al pronto intervento"
+    },
+    {
+      "nome": "spiega_bolletta",
+      "tipo": "consulenza",
+      "esegue": "ai",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Voci della bolletta dal cervello"
+    }
+  ],
+  "prima_ondata": [
+    "offerte",
+    "stima_spesa",
+    "bolletta_e_consumi",
+    "autolettura",
+    "spiega_bolletta"
+  ],
+  "mai_ai": [
+    "Calcolo della bolletta",
+    "Sospensione della fornitura",
+    "Guasti e sicurezza della rete"
+  ],
+  "norme": [
+    "Regolazione ARERA",
+    "Codice di condotta commerciale",
+    "Codice del consumo",
+    "NIS2",
+    "GDPR"
+  ]
+}

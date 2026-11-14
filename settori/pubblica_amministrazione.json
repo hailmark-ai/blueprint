@@ -1,0 +1,129 @@
+{
+  "id": "pubblica_amministrazione",
+  "nome": "Pubblica amministrazione (comuni ed enti)",
+  "archetipo": "pratica",
+  "perche": "Il cittadino avvia procedimenti: requisiti e stato all'AI, il provvedimento all'ufficio.",
+  "reparti": [
+    "Sportello e URP",
+    "Uffici di settore",
+    "Protocollo",
+    "Tributi",
+    "Servizi informativi"
+  ],
+  "cervello": [
+    {
+      "tipo": "fatti",
+      "voce": "Servizi, procedimenti, uffici, orari",
+      "esposizione": "pubblico",
+      "proprietario": "Sportello e URP"
+    },
+    {
+      "tipo": "fatti",
+      "voce": "Pratiche e posizioni del cittadino",
+      "esposizione": "cliente",
+      "proprietario": "Uffici di settore"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Requisiti, idoneità, importi da regolamento",
+      "esposizione": "interno",
+      "proprietario": "Uffici di settore"
+    },
+    {
+      "tipo": "processi",
+      "voce": "Istanza, istruttoria, provvedimento",
+      "esposizione": "interno",
+      "proprietario": "Uffici di settore"
+    },
+    {
+      "tipo": "sapere",
+      "voce": "Guide ai procedimenti e testi normativi",
+      "esposizione": "pubblico",
+      "proprietario": "Sportello e URP"
+    },
+    {
+      "tipo": "identita",
+      "voce": "Ente, responsabili dei procedimenti, trasparenza",
+      "esposizione": "pubblico",
+      "proprietario": "Sportello e URP"
+    }
+  ],
+  "capacita": [
+    {
+      "nome": "cerca_servizio",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Procedimenti, uffici, documenti"
+    },
+    {
+      "nome": "verifica_requisiti",
+      "tipo": "calcolo",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Idoneità da regolamento"
+    },
+    {
+      "nome": "presenta_istanza",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Istanza con identità digitale"
+    },
+    {
+      "nome": "stato_pratica",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Fase e responsabile"
+    },
+    {
+      "nome": "paga_tributo",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Pagamento tramite pagoPA"
+    },
+    {
+      "nome": "prenota_sportello",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Appuntamento allo sportello"
+    },
+    {
+      "nome": "guida",
+      "tipo": "consulenza",
+      "esegue": "ai",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Orientamento dai testi ufficiali"
+    }
+  ],
+  "prima_ondata": [
+    "cerca_servizio",
+    "verifica_requisiti",
+    "stato_pratica",
+    "prenota_sportello",
+    "guida"
+  ],
+  "mai_ai": [
+    "Provvedimenti e decisioni amministrative",
+    "Calcolo di tributi e sanzioni",
+    "Accertamenti"
+  ],
+  "norme": [
+    "Legge 241/1990 sul procedimento",
+    "Codice dell'amministrazione digitale",
+    "SPID, CIE e pagoPA",
+    "AI Act: accesso a servizi pubblici essenziali ad alto rischio",
+    "Legge 132/2025 sull'AI",
+    "GDPR"
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "id": "su_misura",
+  "nome": "Su misura (serramenti, arredo, edilizia)",
+  "archetipo": "configurazione",
+  "perche": "Il cliente compra qualcosa fatto per lui: il configuratore con i vincoli tecnici è il prodotto.",
+  "reparti": [
+    "Direzione",
+    "Commerciale e showroom",
+    "Ufficio tecnico",
+    "Produzione",
+    "Posa e cantieri",
+    "Acquisti"
+  ],
+  "cervello": [
+    {
+      "tipo": "fatti",
+      "voce": "Materiali, finiture, gamme, foto",
+      "esposizione": "pubblico",
+      "proprietario": "Ufficio tecnico"
+    },
+    {
+      "tipo": "fatti",
+      "voce": "Commesse e stato del cantiere",
+      "esposizione": "cliente",
+      "proprietario": "Posa e cantieri"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Vincoli tecnici: misure, carichi, prestazioni termiche",
+      "esposizione": "interno",
+      "proprietario": "Ufficio tecnico"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Listini, maggiorazioni, margini",
+      "esposizione": "segreto",
+      "proprietario": "Commerciale e showroom"
+    },
+    {
+      "tipo": "processi",
+      "voce": "Rilievo, configurazione, ordine, produzione, posa",
+      "esposizione": "interno",
+      "proprietario": "Produzione"
+    },
+    {
+      "tipo": "sapere",
+      "voce": "Soluzioni tecniche e casi difficili",
+      "esposizione": "interno",
+      "proprietario": "Ufficio tecnico"
+    },
+    {
+      "tipo": "identita",
+      "voce": "Azienda, certificazioni, garanzie",
+      "esposizione": "pubblico",
+      "proprietario": "Direzione"
+    }
+  ],
+  "capacita": [
+    {
+      "nome": "catalogo_materiali",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Materiali e finiture"
+    },
+    {
+      "nome": "configura",
+      "tipo": "calcolo",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Configurazione valida rispetto ai vincoli"
+    },
+    {
+      "nome": "preventivo",
+      "tipo": "calcolo",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Prezzo della configurazione"
+    },
+    {
+      "nome": "prenota_rilievo",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Sopralluogo per le misure"
+    },
+    {
+      "nome": "conferma_ordine",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Ordine su misure definitive"
+    },
+    {
+      "nome": "stato_commessa",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Produzione e data di posa"
+    },
+    {
+      "nome": "consulenza_progetto",
+      "tipo": "consulenza",
+      "esegue": "ai",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Aiuto nella scelta dal cervello"
+    }
+  ],
+  "prima_ondata": [
+    "catalogo_materiali",
+    "configura",
+    "preventivo",
+    "prenota_rilievo",
+    "consulenza_progetto"
+  ],
+  "mai_ai": [
+    "Fattibilità tecnica e statica",
+    "Prezzo e margini",
+    "Misure definitive di produzione"
+  ],
+  "norme": [
+    "Marcatura CE e norme di prodotto, per i serramenti EN 14351-1",
+    "D.Lgs. 81/2008 sicurezza nei cantieri",
+    "Requisiti tecnici per le detrazioni fiscali",
+    "Codice del consumo",
+    "GDPR"
+  ]
+}

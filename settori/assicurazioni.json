@@ -1,0 +1,157 @@
+{
+  "id": "assicurazioni",
+  "nome": "Assicurazioni (broker e agenzie)",
+  "archetipo": "contratto",
+  "perche": "Il cliente compra un contratto regolato: prezzo e adeguatezza devono essere riproducibili e documentati.",
+  "reparti": [
+    "Direzione",
+    "Commerciale e prodotti",
+    "Tecnico",
+    "Sinistri",
+    "Amministrazione",
+    "Compliance"
+  ],
+  "cervello": [
+    {
+      "tipo": "fatti",
+      "voce": "Prodotti, coperture, compagnie partner",
+      "esposizione": "pubblico",
+      "proprietario": "Tecnico"
+    },
+    {
+      "tipo": "fatti",
+      "voce": "Polizze in essere, quietanze, scadenze",
+      "esposizione": "cliente",
+      "proprietario": "Amministrazione"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Tariffe e parametri di rischio",
+      "esposizione": "segreto",
+      "proprietario": "Tecnico"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Domande ed esigenze, regole di adeguatezza",
+      "esposizione": "interno",
+      "proprietario": "Compliance"
+    },
+    {
+      "tipo": "processi",
+      "voce": "Emissione, rinnovo, variazione",
+      "esposizione": "interno",
+      "proprietario": "Amministrazione"
+    },
+    {
+      "tipo": "processi",
+      "voce": "Denuncia e gestione del sinistro",
+      "esposizione": "interno",
+      "proprietario": "Sinistri"
+    },
+    {
+      "tipo": "sapere",
+      "voce": "Interpretazione delle condizioni, casi risolti",
+      "esposizione": "interno",
+      "proprietario": "Tecnico"
+    },
+    {
+      "tipo": "identita",
+      "voce": "Chi siamo, iscrizione al registro, reclami, garanzie",
+      "esposizione": "pubblico",
+      "proprietario": "Direzione"
+    }
+  ],
+  "capacita": [
+    {
+      "nome": "catalogo",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Prodotti e coperture disponibili"
+    },
+    {
+      "nome": "documenti_precontrattuali",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Documenti informativi del prodotto"
+    },
+    {
+      "nome": "preventivo",
+      "tipo": "calcolo",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Premio calcolato dalla tariffa"
+    },
+    {
+      "nome": "verifica_adeguatezza",
+      "tipo": "calcolo",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Coerenza del prodotto con le esigenze dichiarate"
+    },
+    {
+      "nome": "emissione",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Emissione dopo firma sul canale del broker"
+    },
+    {
+      "nome": "stato_polizza",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Polizze, scadenze, quietanze del cliente"
+    },
+    {
+      "nome": "apertura_sinistro",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Denuncia con documenti"
+    },
+    {
+      "nome": "consulenza",
+      "tipo": "consulenza",
+      "esegue": "ai",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Spiega coperture e condizioni dal cervello"
+    },
+    {
+      "nome": "parla_con_consulente",
+      "tipo": "consulenza",
+      "esegue": "persona",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Passaggio a un consulente"
+    }
+  ],
+  "prima_ondata": [
+    "catalogo",
+    "documenti_precontrattuali",
+    "preventivo",
+    "verifica_adeguatezza",
+    "stato_polizza"
+  ],
+  "mai_ai": [
+    "Calcolo del premio",
+    "Giudizio di adeguatezza",
+    "Liquidazione del sinistro"
+  ],
+  "norme": [
+    "Direttiva IDD e Regolamenti IVASS 40 e 41/2018",
+    "GDPR",
+    "AI Act: vita e salute ad alto rischio",
+    "eIDAS per la firma",
+    "PSD2 per gli incassi"
+  ]
+}

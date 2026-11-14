@@ -1,0 +1,142 @@
+{
+  "id": "sanita",
+  "nome": "Sanità privata (poliambulatori, cliniche, studi medici)",
+  "archetipo": "agenda",
+  "perche": "Il paziente compra tempo di un professionista: l'agenda è il centro, la clinica resta umana.",
+  "reparti": [
+    "Direzione sanitaria",
+    "Accettazione e prenotazioni",
+    "Medici e specialisti",
+    "Amministrazione",
+    "Qualità e privacy"
+  ],
+  "cervello": [
+    {
+      "tipo": "fatti",
+      "voce": "Prestazioni, medici, sedi, orari, tariffe",
+      "esposizione": "pubblico",
+      "proprietario": "Accettazione e prenotazioni"
+    },
+    {
+      "tipo": "fatti",
+      "voce": "Appuntamenti e referti del paziente",
+      "esposizione": "cliente",
+      "proprietario": "Direzione sanitaria"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Prerequisiti, preparazioni, prescrizione richiesta",
+      "esposizione": "interno",
+      "proprietario": "Direzione sanitaria"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Regole di agenda: durate, slot, priorità",
+      "esposizione": "interno",
+      "proprietario": "Accettazione e prenotazioni"
+    },
+    {
+      "tipo": "processi",
+      "voce": "Prenotazione, accettazione, consegna referti",
+      "esposizione": "interno",
+      "proprietario": "Accettazione e prenotazioni"
+    },
+    {
+      "tipo": "sapere",
+      "voce": "Istruzioni pre e post visita, domande frequenti",
+      "esposizione": "interno",
+      "proprietario": "Medici e specialisti"
+    },
+    {
+      "tipo": "identita",
+      "voce": "Struttura, autorizzazioni, convenzioni, carta dei servizi",
+      "esposizione": "pubblico",
+      "proprietario": "Direzione sanitaria"
+    }
+  ],
+  "capacita": [
+    {
+      "nome": "cerca_prestazione",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Prestazioni, specialisti, sedi"
+    },
+    {
+      "nome": "disponibilita",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Slot liberi per prestazione"
+    },
+    {
+      "nome": "preparazione_esame",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Istruzioni validate dalla direzione sanitaria"
+    },
+    {
+      "nome": "prenota",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Prenotazione con dati del paziente"
+    },
+    {
+      "nome": "disdici",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Disdetta o spostamento"
+    },
+    {
+      "nome": "referto_pronto",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Disponibilità del referto, consegna sul canale della struttura"
+    },
+    {
+      "nome": "informazioni_generali",
+      "tipo": "consulenza",
+      "esegue": "ai",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Risposte non cliniche dal cervello"
+    },
+    {
+      "nome": "domanda_al_medico",
+      "tipo": "consulenza",
+      "esegue": "persona",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Domanda clinica gestita da un medico"
+    }
+  ],
+  "prima_ondata": [
+    "cerca_prestazione",
+    "disponibilita",
+    "preparazione_esame",
+    "prenota",
+    "disdici"
+  ],
+  "mai_ai": [
+    "Diagnosi e prescrizione",
+    "Triage che decide la priorità clinica",
+    "Spiegazione del referto senza medico"
+  ],
+  "norme": [
+    "GDPR, articolo 9: dati sanitari",
+    "Regolamento dispositivi medici per software con finalità medica",
+    "AI Act",
+    "Legge 132/2025 sull'AI",
+    "Fascicolo sanitario elettronico"
+  ]
+}

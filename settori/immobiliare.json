@@ -1,0 +1,132 @@
+{
+  "id": "immobiliare",
+  "nome": "Immobiliare (agenzie)",
+  "archetipo": "catalogo",
+  "perche": "Il catalogo sono gli immobili, ma il valore sta nella trattativa: quella resta umana.",
+  "reparti": [
+    "Direzione",
+    "Acquisizione",
+    "Vendite e locazioni",
+    "Valutazioni",
+    "Amministrazione e contratti"
+  ],
+  "cervello": [
+    {
+      "tipo": "fatti",
+      "voce": "Immobili, planimetrie, prezzi richiesti, classe energetica",
+      "esposizione": "pubblico",
+      "proprietario": "Acquisizione"
+    },
+    {
+      "tipo": "fatti",
+      "voce": "Visite, proposte, trattative",
+      "esposizione": "cliente",
+      "proprietario": "Vendite e locazioni"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Valutazioni e prezzo minimo del proprietario",
+      "esposizione": "segreto",
+      "proprietario": "Valutazioni"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Provvigioni e condizioni d'incarico",
+      "esposizione": "interno",
+      "proprietario": "Amministrazione e contratti"
+    },
+    {
+      "tipo": "processi",
+      "voce": "Visita, proposta, preliminare, rogito",
+      "esposizione": "interno",
+      "proprietario": "Vendite e locazioni"
+    },
+    {
+      "tipo": "sapere",
+      "voce": "Conoscenza delle zone, domande tipiche",
+      "esposizione": "interno",
+      "proprietario": "Vendite e locazioni"
+    },
+    {
+      "tipo": "identita",
+      "voce": "Agenzia, iscrizioni, incarichi",
+      "esposizione": "pubblico",
+      "proprietario": "Direzione"
+    }
+  ],
+  "capacita": [
+    {
+      "nome": "cerca_immobili",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Ricerca per zona, prezzo, caratteristiche"
+    },
+    {
+      "nome": "dettaglio_immobile",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Scheda, planimetria, APE"
+    },
+    {
+      "nome": "stima_indicativa",
+      "tipo": "calcolo",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Forchetta di valore da dati di zona"
+    },
+    {
+      "nome": "prenota_visita",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Visita in agenda"
+    },
+    {
+      "nome": "proposta_acquisto",
+      "tipo": "scrittura",
+      "esegue": "persona",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Proposta raccolta e firmata con l'agente"
+    },
+    {
+      "nome": "stato_trattativa",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Stato della proposta"
+    },
+    {
+      "nome": "domande_zona",
+      "tipo": "consulenza",
+      "esegue": "ai",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Servizi, trasporti, quartiere dal cervello"
+    }
+  ],
+  "prima_ondata": [
+    "cerca_immobili",
+    "dettaglio_immobile",
+    "prenota_visita",
+    "domande_zona"
+  ],
+  "mai_ai": [
+    "Prezzo minimo e trattativa per il proprietario",
+    "Firma di proposte e incarichi",
+    "Verifiche urbanistiche e catastali"
+  ],
+  "norme": [
+    "Legge 39/1989 sugli agenti immobiliari",
+    "APE negli annunci",
+    "Normativa antiriciclaggio",
+    "GDPR"
+  ]
+}

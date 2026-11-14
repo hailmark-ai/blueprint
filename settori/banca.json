@@ -1,0 +1,135 @@
+{
+  "id": "banca",
+  "nome": "Banca e servizi di pagamento",
+  "archetipo": "contratto",
+  "perche": "Ogni operazione muove denaro o crea credito: autenticazione forte e decisioni tracciabili.",
+  "reparti": [
+    "Direzione",
+    "Retail",
+    "Crediti",
+    "Pagamenti",
+    "Antiriciclaggio e compliance",
+    "Assistenza"
+  ],
+  "cervello": [
+    {
+      "tipo": "fatti",
+      "voce": "Conti, carte, prestiti, condizioni economiche",
+      "esposizione": "pubblico",
+      "proprietario": "Retail"
+    },
+    {
+      "tipo": "fatti",
+      "voce": "Rapporti, saldi, movimenti",
+      "esposizione": "cliente",
+      "proprietario": "Pagamenti"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Merito creditizio e politiche del credito",
+      "esposizione": "segreto",
+      "proprietario": "Crediti"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Controlli antiriciclaggio e limiti operativi",
+      "esposizione": "segreto",
+      "proprietario": "Antiriciclaggio e compliance"
+    },
+    {
+      "tipo": "processi",
+      "voce": "Apertura conto, erogazione prestito, contestazioni",
+      "esposizione": "interno",
+      "proprietario": "Retail"
+    },
+    {
+      "tipo": "sapere",
+      "voce": "Casistiche di assistenza e frodi ricorrenti",
+      "esposizione": "interno",
+      "proprietario": "Assistenza"
+    },
+    {
+      "tipo": "identita",
+      "voce": "Chi siamo, fogli informativi, tutela del cliente",
+      "esposizione": "pubblico",
+      "proprietario": "Direzione"
+    }
+  ],
+  "capacita": [
+    {
+      "nome": "prodotti",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Conti, carte, prestiti e condizioni"
+    },
+    {
+      "nome": "simulazione_prestito",
+      "tipo": "calcolo",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Rata e costo totale indicativi"
+    },
+    {
+      "nome": "saldo_movimenti",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Saldo e movimenti del cliente"
+    },
+    {
+      "nome": "bonifico",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Pagamento con autenticazione forte"
+    },
+    {
+      "nome": "blocco_carta",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Blocco immediato della carta"
+    },
+    {
+      "nome": "richiesta_prestito",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Domanda istruita da motore e persone"
+    },
+    {
+      "nome": "assistenza",
+      "tipo": "consulenza",
+      "esegue": "ai",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Spiegazioni su prodotti e movimenti"
+    }
+  ],
+  "prima_ondata": [
+    "prodotti",
+    "simulazione_prestito",
+    "saldo_movimenti",
+    "blocco_carta"
+  ],
+  "mai_ai": [
+    "Decisione sul credito",
+    "Pagamenti senza autenticazione forte",
+    "Esito dei controlli antiriciclaggio"
+  ],
+  "norme": [
+    "PSD2 e autenticazione forte",
+    "Testo unico bancario e trasparenza",
+    "Normativa antiriciclaggio",
+    "GDPR",
+    "AI Act: merito creditizio ad alto rischio",
+    "DORA"
+  ]
+}

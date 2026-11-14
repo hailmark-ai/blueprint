@@ -1,0 +1,190 @@
+{
+  "azienda": {
+    "nome": "Magazzino Esempio Srl (azienda inventata)",
+    "sito": "https://esempio.invalid",
+    "settore_di_partenza": "logistica"
+  },
+  "id": "magazzino-esempio",
+  "nome": "Magazzino Esempio Srl",
+  "archetipo": "asset",
+  "perche": "Deposito conto terzi in area metropolitana: i clienti chiedono posti pallet, ritiri e stato delle merci. Esempio didattico, dati inventati.",
+  "reparti": [
+    "Commerciale",
+    "Operazioni e magazzini",
+    "Trasporti",
+    "Customer service",
+    "Amministrazione"
+  ],
+  "cervello": [
+    {
+      "tipo": "fatti",
+      "voce": "Servizi, zone servite, tempi standard",
+      "esposizione": "pubblico",
+      "proprietario": "Commerciale",
+      "fonte": "Listino servizi 2026 v3 e gestionale magazzino, esportazione del 2026-11-10",
+      "approvata": true
+    },
+    {
+      "tipo": "fatti",
+      "voce": "Spedizioni, posizioni, prove di consegna",
+      "esposizione": "cliente",
+      "proprietario": "Operazioni e magazzini",
+      "fonte": "Listino servizi 2026 v3 e gestionale magazzino, esportazione del 2026-11-10",
+      "approvata": true
+    },
+    {
+      "tipo": "regole",
+      "voce": "Tariffe, supplementi, regole di peso e volume",
+      "esposizione": "segreto",
+      "proprietario": "Commerciale",
+      "fonte": "Tariffario interno 2026, foglio 'tariffe_pallet', intervista con il commerciale del 2026-11-11",
+      "approvata": true
+    },
+    {
+      "tipo": "regole",
+      "voce": "Instradamento e capacità",
+      "esposizione": "interno",
+      "proprietario": "Trasporti",
+      "fonte": "Tariffario interno 2026, foglio 'tariffe_pallet', intervista con il commerciale del 2026-11-11",
+      "approvata": true
+    },
+    {
+      "tipo": "processi",
+      "voce": "Ritiro, consegna, giacenza, reclamo",
+      "esposizione": "interno",
+      "proprietario": "Customer service",
+      "fonte": "Procedura operativa PO-04 rev. 2 e intervista con il capo magazzino del 2026-11-11",
+      "approvata": true
+    },
+    {
+      "tipo": "sapere",
+      "voce": "Eccezioni e soluzioni tipiche",
+      "esposizione": "interno",
+      "proprietario": "Customer service",
+      "fonte": "Intervista con il customer service del 2026-11-12, registro reclami 2025-2026",
+      "approvata": true
+    },
+    {
+      "tipo": "identita",
+      "voce": "Rete, coperture, condizioni di trasporto",
+      "esposizione": "pubblico",
+      "proprietario": "Commerciale",
+      "fonte": "Sito aziendale e condizioni generali di deposito rev. 2026",
+      "approvata": true
+    }
+  ],
+  "capacita": [
+    {
+      "nome": "quotazione",
+      "tipo": "calcolo",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Prezzo e tempi da tariffa"
+    },
+    {
+      "nome": "posti_pallet_liberi",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Posti pallet liberi per periodo e tipo di merce"
+    },
+    {
+      "nome": "prenota_deposito",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Prenotazione di posti pallet con firma sul canale del magazzino"
+    },
+    {
+      "nome": "prenota_ritiro",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Ritiro con etichetta"
+    },
+    {
+      "nome": "tracking",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Posizione e stato"
+    },
+    {
+      "nome": "modifica_consegna",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Nuova data o indirizzo"
+    },
+    {
+      "nome": "prova_consegna",
+      "tipo": "lettura",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Firma e foto di consegna"
+    },
+    {
+      "nome": "reclamo",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Danno o smarrimento"
+    },
+    {
+      "nome": "assistenza",
+      "tipo": "consulenza",
+      "esegue": "ai",
+      "consenso": false,
+      "esposizione": "cliente",
+      "descrizione": "Gestione delle eccezioni dal cervello"
+    }
+  ],
+  "prima_ondata": [
+    "quotazione",
+    "posti_pallet_liberi",
+    "prenota_deposito",
+    "tracking"
+  ],
+  "mai_ai": [
+    "Pianificazione del carico e sicurezza del mezzo",
+    "Merci pericolose",
+    "Dichiarazioni doganali"
+  ],
+  "norme": [
+    "Convenzione CMR",
+    "ADR per merci pericolose",
+    "Normativa doganale UE",
+    "Regolamento eFTI",
+    "GDPR per i dati dei destinatari"
+  ],
+  "dinamicita": [
+    {
+      "parte": "Risposte ai clienti su servizi e condizioni",
+      "livello": "dinamico",
+      "motivo": "Linguaggio, nessun effetto irreversibile"
+    },
+    {
+      "parte": "Tariffe di deposito e preventivi",
+      "livello": "ibrido",
+      "motivo": "Stesso input, stesso prezzo; crea un contratto"
+    },
+    {
+      "parte": "Pianificazione dei ritiri",
+      "livello": "ibrido",
+      "motivo": "Regole precise, rifacibile e controllabile"
+    },
+    {
+      "parte": "Comando dei carrelli automatici",
+      "livello": "statico",
+      "motivo": "Sicurezza delle persone"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": "turismo_ospitalita",
+  "nome": "Turismo e ospitalità",
+  "archetipo": "agenda",
+  "perche": "L'ospite compra notti e servizi in date precise: disponibilità e prezzo dinamico sono il cuore.",
+  "reparti": [
+    "Direzione",
+    "Ricevimento e prenotazioni",
+    "Revenue management",
+    "Servizi",
+    "Marketing"
+  ],
+  "cervello": [
+    {
+      "tipo": "fatti",
+      "voce": "Camere, servizi, foto, posizione",
+      "esposizione": "pubblico",
+      "proprietario": "Marketing"
+    },
+    {
+      "tipo": "fatti",
+      "voce": "Disponibilità e prenotazioni",
+      "esposizione": "interno",
+      "proprietario": "Ricevimento e prenotazioni"
+    },
+    {
+      "tipo": "regole",
+      "voce": "Tariffe dinamiche e restrizioni",
+      "esposizione": "segreto",
+      "proprietario": "Revenue management"
+    },
+    {
+      "tipo": "processi",
+      "voce": "Prenotazione, check-in, modifica, cancellazione",
+      "esposizione": "interno",
+      "proprietario": "Ricevimento e prenotazioni"
+    },
+    {
+      "tipo": "sapere",
+      "voce": "Consigli sul territorio, risposte agli ospiti",
+      "esposizione": "interno",
+      "proprietario": "Ricevimento e prenotazioni"
+    },
+    {
+      "tipo": "identita",
+      "voce": "Struttura, classificazione, politiche di cancellazione",
+      "esposizione": "pubblico",
+      "proprietario": "Direzione"
+    }
+  ],
+  "capacita": [
+    {
+      "nome": "disponibilita_e_prezzo",
+      "tipo": "calcolo",
+      "esegue": "software",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Camere libere e prezzo per date"
+    },
+    {
+      "nome": "prenota",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Prenotazione con garanzia"
+    },
+    {
+      "nome": "modifica_o_cancella",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Secondo la politica della tariffa"
+    },
+    {
+      "nome": "servizi_extra",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Ristorante, spa, transfer"
+    },
+    {
+      "nome": "check_in_online",
+      "tipo": "scrittura",
+      "esegue": "software",
+      "consenso": true,
+      "esposizione": "cliente",
+      "descrizione": "Dati degli ospiti prima dell'arrivo"
+    },
+    {
+      "nome": "consigli_ospite",
+      "tipo": "consulenza",
+      "esegue": "ai",
+      "consenso": false,
+      "esposizione": "pubblico",
+      "descrizione": "Territorio e servizi dal cervello"
+    }
+  ],
+  "prima_ondata": [
+    "disponibilita_e_prezzo",
+    "prenota",
+    "modifica_o_cancella",
+    "consigli_ospite"
+  ],
+  "mai_ai": [
+    "Prezzo della camera",
+    "Assegnazione e overbooking",
+    "Comunicazione degli alloggiati"
+  ],
+  "norme": [
+    "Direttiva pacchetti turistici se si vendono pacchetti",
+    "Codice del consumo",
+    "Comunicazione alloggiati alla Pubblica Sicurezza",
+    "Imposta di soggiorno",
+    "GDPR"
+  ]
+}
